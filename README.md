@@ -22,6 +22,8 @@ To activate your new mapping you need to edit/create
 the file should contain at least the following line
     KEYMAP=classic-dvorak
 
+For more info reference: https://wiki.archlinux.org/index.php/KEYMAP
+
 xkbd
 ----
 For your X session xkbd already contains a Classic Dvorak layout, however we wanted to provide a Dvorak Classic international with dead keys.
