@@ -37,14 +37,14 @@ For your X session xkbd already contains a classic Dvorak layout, however we pro
 
 First append the contents of the file
     
-    xkbd/us-dvorak-int.xkb
+    xkbd/classic-dvorak-int.xkb
     
 to
     /usr/share/X11/xkb/symbols/us
 
 whith
 
-    cat xkbd/us-dvorak-int.xkb >> /usr/share/X11/xkb/symbols/us
+    cat xkbd/us-dvorak-intl.xkb >> /usr/share/X11/xkb/symbols/us
 
 You also need to edit the file
     

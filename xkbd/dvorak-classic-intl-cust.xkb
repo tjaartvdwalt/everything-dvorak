@@ -4,6 +4,7 @@
 // Swap Caps Lock and Left Ctrl
 // Make Right Alt into extra Tab
 
+partial alphanumeric_keys
 xkb_symbols "dvorak-classic-custom" {
 
     name[Group1]= "English (classic Dvorak, intl with dead keys, customized)";
@@ -11,6 +12,6 @@ xkb_symbols "dvorak-classic-custom" {
     include "us(dvorak-classic-intl)"
 
     key <CAPS> { [ Control_L ] };
-    key <LCTL> { [ Capslock ] };
-    key <RAlT> { [ Tab ] };
+    key <LCTL> { [ Caps_Lock ] };
+    key <RALT> { [ Tab ] };
 };
