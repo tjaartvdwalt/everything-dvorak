@@ -1,15 +1,14 @@
-// My personal customisations on top of the Dvorak classic international keyboard 
+// Classic Dvorak international with dead keys
 // Tjaart van der Walt (tjaart@tjaart.co.za)
 // 
-// Swap Caps Lock and Ctrl
-// Make AltGr into extra Tab
+// Include Dvorak international with dead keys and redefine the numeric buttons
 
 
-xkb_symbols "dvorak-classic-custom" {
+xkb_symbols "dvorak-classic-intl" {
 
-    name[Group1]= "English (classic Dvorak, intl with dead keys, customized)";
+    intl[Group1]= "English (classic Dvorak, international with dead keys)";
 
-    include "us(dvorak-classic-intl)"
+    include "us(dvorak-intl)"
 
     key <TLDE> { [dead_grave, dead_tilde,         grave,       asciitilde ] };
 
