@@ -1,12 +1,12 @@
 classic-dvorak-layout
 =====================
-This package provides configuration files for the Dvorak classic layout on a GNU/Linux system.
+This package provides configuration files for the classic Dvorak layout on a GNU/Linux system.
 
-The differences between simplified Dvorak and Dvorak classic are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:
+The differences between simplified Dvorak and classic Dvorak are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:
 
 http://lists.x.org/archives/xorg/2006-July/016530.html
 
-There are two separate mappings that needs to be defined, kbd for typing in a terminal, and xkbd when using X. I use Arch Linux, the location of your config files may be slightly different.
+There are two separate mappings that needs to be defined, kbd for typing in a terminal, and xkbd when using the X server. I use Arch Linux, the location of your config files may be slightly different.
 
 kbd
 ---
@@ -33,18 +33,19 @@ For more info: https://wiki.archlinux.org/index.php/KEYMAP
 
 xkbd
 ----
-For your X session xkbd already contains a classic Dvorak layout, however we provide a classic Dvorak international with dead keys. (We add it as a variant of the English US layout)
+xkbd already contains a classic Dvorak layout, however we provide a classic Dvorak international with dead keys. (We add it as a variant of the English US layout)
 
 First append the contents of the file
     
-    xkbd/classic-dvorak-int.xkb
+    xkbd/dvorak-classic-intl.xkb
     
 to
+
     /usr/share/X11/xkb/symbols/us
 
-whith
+with
 
-    cat xkbd/us-dvorak-intl.xkb >> /usr/share/X11/xkb/symbols/us
+    cat xkbd/dvorak-classic-intl.xkb >> /usr/share/X11/xkb/symbols/us
 
 You also need to edit the file
     
@@ -66,3 +67,18 @@ For more info: https://wiki.archlinux.org/index.php/XKB
 
 Other customizations
 --------------------
+I customize my layout even more by swapping left ctrl and capslock, and defining other eclectic shortcuts for altgr. These help me keep my hand position for touch typing.
+
+To add these append the contents of 
+
+    xkbd/classic-dvorak-intl.xkb
+    
+to
+
+    /usr/share/X11/xkb/symbols/us
+
+also remember to add an entry to
+
+    /usr/share/X11/xkb/rules/evdev.xml
+
+similar to the example above.

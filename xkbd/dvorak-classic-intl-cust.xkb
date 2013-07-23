@@ -14,4 +14,11 @@ xkb_symbols "dvorak-classic-custom" {
     key <CAPS> { [ Control_L ] };
     key <LCTL> { [ Caps_Lock ] };
     key <RALT> { [ Tab ] };
+
+    key <AD08> { [         c,          C,     Up ] };
+
+    key <AC07> { [      h,   H,        Left      ]       };
+    key <AC08> { [         t,          T,         Down ] };
+    key <AC09> { [         n,          N,        Right ] };
+ 
 };
