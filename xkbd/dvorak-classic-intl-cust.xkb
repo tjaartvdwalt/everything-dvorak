@@ -15,13 +15,13 @@ xkb_symbols "dvorak-classic-custom" {
     key <LCTL> { [ Caps_Lock ] };
     
     key <AD01> { [     slash,   question,     Escape,        dead_hook ] };
-    key <AC11> { [     minus, underscore,     BackSpace  ] };
+    key <AC11> { [     minus, underscore,     Return     ] };
     key <AC01> { [         a,          A,     Tab        ] };
     key <AD09> { [         r,          R,     Page_Up    ] };
     key <AD07> { [         g,          G,     Home       ] };
     key <AB09> { [         v,          V,     Page_Down  ] };
     key <AB07> { [         m,          M,     End        ] };
-    key <AC10> { [         s,          S,     Return     ] };
+    key <AC10> { [         s,          S,     BackSpace  ] };
     
     key <AD08> { [         c,          C,     Up     ] };
     key <AC07> { [         h,          H,     Left   ] };
