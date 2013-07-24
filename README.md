@@ -61,17 +61,17 @@ Add a new variant to the en/US layout. Easiest is to search for "dvorak-classic"
           </configItem>
         </variant>
 
-Log out of your current X-session, and when you log back the layout should be available. (If your X fails to start, check that the syntax of the xml file is valid)
+Log out of your current X-session, and when you log back the layout should be available. (If your X fails to start, check that the syntax of the files you edited are still valid.)
 
 For more info: https://wiki.archlinux.org/index.php/XKB
 
 Other customizations
 --------------------
-I customize my layout even more by swapping left ctrl and capslock, and defining other eclectic shortcuts for altgr. These help me keep my hand position for touch typing.
+I customize my layout even more by swapping left ctrl and capslock, and defining other eclectic shortcuts using altgr. These allow me keep my hand position for touch typing while navigating through a document, and some other often used keys.
 
 To add these append the contents of 
 
-    xkbd/classic-dvorak-intl.xkb
+    xkbd/classic-dvorak-intl-cust.xkb
     
 to
 
