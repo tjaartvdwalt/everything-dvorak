@@ -19,7 +19,7 @@ xkb_symbols "dvorak-classic-intl" {
     key <AE07> { [          0,  parenright      ]       };
     key <AE08> { [          2,  at              ]       };
     key <AE09> { [          4,  dollar          ]       };
-    key <AE10> { [          6,  asciicircum, dead_circumflex, dead_circumflex ] };
+    key <AE10> { [          6, dead_circumflex,    onequarter,      asciicircum ] };
     key <AE11> { [          8,  asterisk        ]       };
     key <AE12> { [ bracketright, braceright,  dead_tilde] };
 
