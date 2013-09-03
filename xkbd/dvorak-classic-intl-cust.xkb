@@ -18,6 +18,7 @@ xkb_symbols "dvorak-classic-custom" {
     key <AC11> { [     minus, underscore,     Return     ] };
     key <AC01> { [         a,          A,     Tab        ] };
     key <AD09> { [         r,          R,     Page_Up    ] };
+    key <AD10> { [         l,          L,     Delete     ] };
     key <AD07> { [         g,          G,     Home       ] };
     key <AB09> { [         v,          V,     Page_Down  ] };
     key <AB07> { [         m,          M,     End        ] };
