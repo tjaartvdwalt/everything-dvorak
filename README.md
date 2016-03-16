@@ -39,9 +39,15 @@ maps to:
 |end  |   |pgdn |	   |       |	
 
 
+## Installation ##
+To install your new keymap you need  the `make` utility installed.
+```(bash)
+make install
+```
+
 ## Configuration:
 
-The best way to configure your layout is to use `localectl`
+The easiest way to configure your layout is by using `localectl`
 
 ### kbd
 
