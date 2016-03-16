@@ -36,7 +36,7 @@ maps to:
 |-----|---|-----|------|-------|
 |home |^  |pgup | 	   |       |	
 |<    |V  |>    |bcksp |return |
-|end  |   |pgdn |v	   |       |	
+|end  |   |pgdn |	   |       |	
 
 
 ## Configuration:
