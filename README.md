@@ -34,8 +34,8 @@ maps to:
 
 |     |   |     |      |       |
 |-----|---|-----|------|-------|
-|home |^  |pgup | 	   |       |	
-|<    |V  |>    |bcksp |return |
+|home |↑  |pgup | 	   |       |	
+|←   |↓  | →   |bcksp |return |
 |end  |   |pgdn |	   |       |	
 
 
