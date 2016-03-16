@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Classic-dvorak-int-layout by tjaartvdwalt</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Classic-dvorak-int-layout</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/tjaartvdwalt/classic-dvorak-int-layout" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/tjaartvdwalt/classic-dvorak-int-layout/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/tjaartvdwalt/classic-dvorak-int-layout/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="classic-dvorak-layout" class="anchor" href="#classic-dvorak-layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>classic-dvorak-layout</h1>
+
+<h2>
+<a id="whats-included" class="anchor" href="#whats-included" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Whats included?</h2>
+
+<p>This package provides configuration files for the following:</p>
+
+<ul>
+<li>  For the console (kbd) it provides a Classic Dvorak layout.</li>
+<li>  For Xserver it provides a Classic Dvorak International layout.</li>
+<li>  Optionally it also provides some extra shortcuts that the author uses.</li>
+</ul>
+
+<p>X already provides a Classic Dvorak layout, but this package extends the <code>us(dvorak-int)</code> layout. I did this because I use
+dead keys often in my native language.</p>
+
+<h2>
+<a id="what-are-the-differences-between-classic-dvorak-and-simplified-dvorak" class="anchor" href="#what-are-the-differences-between-classic-dvorak-and-simplified-dvorak" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What are the differences between classic Dvorak and simplified Dvorak?</h2>
+
+<p>The differences between simplified Dvorak and classic Dvorak are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:</p>
+
+<p><a href="http://lists.x.org/archives/xorg/2006-July/016530.html">http://lists.x.org/archives/xorg/2006-July/016530.html</a></p>
+
+<h2>
+<a id="what-is-dvorak-classic-custom" class="anchor" href="#what-is-dvorak-classic-custom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is dvorak-classic-custom?</h2>
+
+<p>This custom keymap defines my personal shortcuts. It boils down to this:
+When holding down Right Alt, you get arrow keys in an inverted-T on your right hand.</p>
+
+<p>The following keys:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>g</td>
+<td>c</td>
+<td>r</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>h</td>
+<td>t</td>
+<td>n</td>
+<td>s</td>
+<td>\</td>
+</tr>
+<tr>
+<td>m</td>
+<td></td>
+<td>v</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>maps to:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>home</td>
+<td>^</td>
+<td>pgup</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>V</td>
+<td>&gt;</td>
+<td>bcksp</td>
+<td>return</td>
+</tr>
+<tr>
+<td>end</td>
+<td></td>
+<td>pgdn</td>
+<td>v</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration:</h2>
+
+<p>The best way to configure your layout is to use <code>localectl</code></p>
+
+<h3>
+<a id="kbd" class="anchor" href="#kbd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>kbd</h3>
+
+<pre><code>sudo localectl --no-convert set-keymap classic-dvorak
+</code></pre>
+
+<p>After a restart this will take effect.</p>
+
+<h3>
+<a id="xkbd" class="anchor" href="#xkbd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>xkbd</h3>
+
+<pre><code>sudo localectl --no-convert set-x11-keymap custom "" dvorak-classic-custom ctrl:swapcaps
+</code></pre>
+
+<ol>
+<li>
+<p>Notes</p>
+
+<ul>
+<li>  <code>--no-convert</code> stops localectl from converting the keymap between the console and X11</li>
+<li>  the "" is where your keyboard layout would go, but I don't manually want to configure that, so I leave it blank.</li>
+<li>  <code>dvorak-classic-custom</code> is my default layout in this keymap</li>
+<li>  I swap ctrl and capslock using <code>ctrl:swapcaps</code>
+</li>
+</ul>
+</li>
+</ol>
+
+<h3>
+<a id="switching-between-profiles-in-x11" class="anchor" href="#switching-between-profiles-in-x11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Switching between profiles in X11</h3>
+
+<p>To switch between normal qwerty and my layout you must add the <code>us</code> keymap in <code>localectl</code>:</p>
+
+<pre><code>localectl --no-convert set-x11-keymap custom,us "" dvorak-classic-custom ctrl:swapcaps
+</code></pre>
+
+<p>To switch to layout <code>custom( dvorak-classic-custom)</code> use:</p>
+
+<pre><code>setxkbmap -layout custom\(dvorak-classic-custom\)
+</code></pre>
+
+<p>To switch to <code>us(intl)</code>:</p>
+
+<pre><code>setxkbmap -layout us\(intl\)
+</code></pre>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/tjaartvdwalt">tjaartvdwalt</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
