@@ -24,13 +24,15 @@ When holding down Right Alt, you get arrow keys in an inverted-T on your right h
 
 The following keys:
 
+|   |   |   |   |   |
 |---|---|---|---|---|
 |g  |c  |r  |	|   |  	
-|h  |t  |n  |s  | \ |
+|h  |t  |n  |s  |\  |
 |m  |   |v  |   |   |	
 
 maps to:
 
+|     |   |     |      |       |
 |-----|---|-----|------|-------|
 |home |^  |pgup | 	   |       |	
 |<    |V  |>    |bcksp |return |
