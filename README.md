@@ -23,19 +23,18 @@ This custom keymap defines my personal shortcuts. It boils down to this:
 When holding down Right Alt, you get arrow keys in an inverted-T on your right hand.
 
 The following keys:
-|   |   |   |   |   |
+
 |---|---|---|---|---|
 |g  |c  |r  |	|   |  	
-|h  |t  |n  |s  |\  |
+|h  |t  |n  |s  | \ |
 |m  |   |v  |   |   |	
 
 maps to:
 
-|     |   |     |      |       |   |
-|-----|---|-----|------|-------|---|
-|home |^  |pgup | 	   |       |   |	
-|<    |V  |>    |bcksp |return |\  |
-|end  |   |pgdn |v	   |       |   |	
+|-----|---|-----|------|-------|
+|home |^  |pgup | 	   |       |	
+|<    |V  |>    |bcksp |return |
+|end  |   |pgdn |v	   |       |	
 
 
 ## Configuration:
