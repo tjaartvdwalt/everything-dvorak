@@ -1,48 +1,43 @@
-# classic-dvorak-layout
+# Everything Dvorak
+
+*This doc needs updating*
 
 ## Whats included?
 
-This package provides configuration files for the following:
+This package provides several keymapping files related to the Dvorak keyboard layout
 
--   For the console (kbd) it provides a Classic Dvorak layout.
--   For Xserver it provides a Classic Dvorak International layout.
--   Optionally it also provides some extra shortcuts that the author uses.
-
-X already provides a Classic Dvorak layout, but this package extends the `us(dvorak-int)` layout. I did this because I use
-dead keys often in my native language.
-
-## What are the differences between classic Dvorak and simplified Dvorak?
-
-The differences between simplified Dvorak and classic Dvorak are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:
-
-<http://lists.x.org/archives/xorg/2006-July/016530.html>
-
-## What is dvorak-classic-custom?
-
-This custom keymap defines my personal shortcuts. It boils down to this:
-When holding down Right Alt, you get arrow keys in an inverted-T on your right hand.
-
-The following keys:
-
-|   |   |   |   |   |
-|---|---|---|---|---|
-|g  |c  |r  |	|   |  	
-|h  |t  |n  |s  |\  |
-|m  |   |v  |   |   |	
-
-maps to:
-
-|     |   |     |      |       |
-|-----|---|-----|------|-------|
-|home |↑  |pgup | 	   |       |	
-|←   |↓  | →   |bcksp |return |
-|end  |   |pgdn |	   |       |	
-
+- kbd layout Classic Dvorak layout kbd
+- xkb layout for Classic Dvorak International
+- xkb layouts providing tenkey shortcuts on top of Classic Dvorak International, and Programmers Dvorak Layouts.
 
 ## Installation ##
 To install your new keymap you need  the `make` utility installed.
 ```(bash)
 make install
+```
+
+## System Wide Installation ##
+
+### Install ###
+
+```bash
+sudo make install
+```
+
+### Configure ###
+
+## User Installation ##
+
+### Install ###
+
+```bash
+make install-user
+```
+
+### Configure ###
+
+```bash
+xkbcomp dvp-custom
 ```
 
 ## Configuration:
@@ -79,3 +74,39 @@ To switch to layout `custom( dvorak-classic-custom)` use:
 To switch to `us(intl)`:
 
     setxkbmap -layout us\(intl\)
+
+
+
+## Further Reading  ##
+
+### What are the differences between classic Dvorak and simplified Dvorak? ###
+
+The differences between simplified Dvorak and classic Dvorak are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:
+
+<http://lists.x.org/archives/xorg/2006-July/016530.html>
+
+Classic Dvorak Layout
+
+## What is dvorak-classic-custom?
+
+This custom keymap defines my personal shortcuts. It boils down to this:
+When holding down Right Alt, you get arrow keys in an inverted-T on your right hand.
+
+The following keys:
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+|g  |c  |r  |	|   |  	
+|h  |t  |n  |s  |\  |
+|m  |   |v  |   |   |	
+
+maps to:
+
+|     |   |     |      |       |
+|-----|---|-----|------|-------|
+|home |↑  |pgup | 	   |       |	
+|←   |↓  | →   |bcksp |return |
+|end  |   |pgdn |	   |       |	
+
+
+

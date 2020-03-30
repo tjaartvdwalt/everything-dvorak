@@ -1,0 +1,28 @@
+// Classic Dvorak international with dead keys
+// Tjaart van der Walt (tjaart@tjaart.co.za)
+//
+// Include Dvorak international with dead keys and redefine the numeric buttons
+
+partial alphanumeric_keys
+xkb_symbols "dvorak-classic-intl" {
+
+	name[Group1]= "English (classic Dvorak, international with dead keys)";
+
+	include "us(dvorak-intl)"
+
+		key <AE01> { [ bracketleft, braceleft       ]       };
+	key <AE02> { [          7,  ampersand       ]       };
+	key <AE03> { [          5,  percent         ]       };
+	key <AE04> { [          3,  numbersign      ]       };
+	key <AE05> { [          1,  exclam          ]       };
+	key <AE06> { [          9,  parenleft,  dead_grave] };
+	key <AE07> { [          0,  parenright      ]       };
+	key <AE08> { [          2,  at              ]       };
+	key <AE09> { [          4,  dollar          ]       };
+	key <AE10> { [          6, dead_circumflex,    onequarter,      asciicircum ] };
+	key <AE11> { [          8,  asterisk        ]       };
+	key <AE12> { [ bracketright, braceright,  dead_tilde] };
+
+	key <AD01> { [     slash,   question,  questiondown,        dead_hook ] };
+	key <AD11> { [dead_acute, dead_diaeresis, apostrophe,        quotedbl ] };
+};

@@ -1,0 +1,25 @@
+// My personal customisations on top of the Dvorak classic international keyboard
+// Tjaart van der Walt (tjaart@tjaart.org)
+
+partial alphanumeric_keys
+xkb_symbols "dvorak-classic-intl-custom" {
+
+    name[Group1]= "English (classic Dvorak, intl with dead keys, customized)";
+
+    include "us(dvorak-classic)"
+
+    key <AD09> { [         r,          R,     Page_Up    ] };
+    key <AD10> { [         l,          L,     Delete     ] };
+    key <AD07> { [         g,          G,     Home       ] };
+    key <AB09> { [         v,          V,     Page_Down  ] };
+    key <AB07> { [         m,          M,     End        ] };
+    key <AC10> { [         s,          S,     BackSpace  ] };
+
+    key <AD08> { [         c,          C,     Up     ] };
+    key <AC07> { [         h,          H,     Left   ] };
+    key <AC08> { [         t,          T,     Down   ] };
+    key <AC09> { [         n,          N,     Right  ] };
+
+   include "level3(ralt_switch)"
+};
+

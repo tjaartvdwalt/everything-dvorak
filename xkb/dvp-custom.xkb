@@ -1,0 +1,39 @@
+// My personal customisations on top of the Programmers Dvorak layout
+// Tjaart van der Walt (tjaart@tjaart.org)
+
+partial alphanumeric_keys
+xkb_symbols "dvp-custom" {
+
+	name[Group1]= "English (Programmers Dvorak with customized shortcuts)";
+
+	include "us(dvp)"
+
+	//  Set numbers when right alt is pressed
+	key <AE02> { [ bracketleft,     7,              7   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE03> { [ braceleft,       5,              5   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE04> { [ braceright,      3,              3   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE05> { [ parenleft,       1,              1   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE06> { [ equal,           9,              9   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	// symbols row, right side
+	key <AE07> { [ asterisk,        0,              0   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE08> { [ parenright,      2,              2   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE09> { [ plus,            4,              4   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE10> { [ bracketright,    6,              6   ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+	key <AE11> { [ exclam,          8,              8,      U2E18    ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };  // reversed interrobang
+
+	// Set Numberpad on right hand
+	key <AC11> { [     minus, underscore,     Return     ] };
+	key <AD09> { [         r,          R,     Page_Up    ] };
+	key <AD10> { [         l,          L,     Delete     ] };
+	key <AD07> { [         g,          G,     Home       ] };
+	key <AB09> { [         v,          V,     Page_Down  ] };
+	key <AB07> { [         m,          M,     End        ] };
+	key <AC10> { [         s,          S,     BackSpace  ] };
+
+	key <AD08> { [         c,          C,     Up     ] };
+	key <AC07> { [         h,          H,     Left   ] };
+	key <AC08> { [         t,          T,     Down   ] };
+	key <AC09> { [         n,          N,     Right  ] };
+
+	include "level3(ralt_switch)"
+};
