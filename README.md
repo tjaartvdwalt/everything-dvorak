@@ -1,112 +1,127 @@
 # Everything Dvorak
 
-*This doc needs updating*
-
 ## Whats included?
 
 This package provides several keymapping files related to the Dvorak keyboard layout
 
-- kbd layout Classic Dvorak layout kbd
-- xkb layout for Classic Dvorak International
-- xkb layouts providing tenkey shortcuts on top of Classic Dvorak International, and Programmers Dvorak Layouts.
+### kbd
 
-## Installation ##
-To install your new keymap you need  the `make` utility installed.
-```(bash)
+-   Classic Dvorak layout
+
+### xkb
+
+-   Classic Dvorak International layout
+-   Customized Classic Dvorak layout (provides tenkey shortcuts, by holding down Alt Gr)
+-   Customized Programmers Dvorak layout (shortcuts similar to above)
+
+## Installation
+
+### Requirements
+
+-   [make](https://www.gnu.org/software/make/)
+
+## System Install
+
+This option will install kbd layout into `/usr/share/kbd/keymaps/i386/dvorak/classic-dvorak.map.gz` the xkb layouts into `/usr/share/X11/xkb/symbols/custom`
+
+### Install
+
+```bash
 make install
 ```
 
-## System Wide Installation ##
+### Configure
 
-### Install ###
+#### kbd
 
 ```bash
-sudo make install
+localectl --no-convert set-keymap classic-dvorak
 ```
 
-### Configure ###
+_Note:_ You may need to restart your machine for the new locale to take effect.
 
-## User Installation ##
+### xkb
 
-### Install ###
+```bash
+localectl --no-convert set-x11-keymap custom "" LAYOUT_NAME ctrl:swapcaps
+```
+
+where `LAYOUT_NAME` can be one of
+
+-   dvorak-classic-intl
+-   dvorak-classic-intl-custom
+-   dvp-custom
+
+_Notes:_
+
+-   `--no-convert` prevents localectl from converting the keymap between the console and X11
+-   the "" is where your keyboard layout would go, but we don't want to configure that manually, so we leave it blank.
+-   `ctrl:swapcaps` swaps ctrl and capslock keys
+
+## User Installation
+
+I use this method for [Sway](https://swaywm.org/), if you are using Xserver, you may have luck trying this method from the Arch Wiki.
+https://wiki.archlinux.org/index.php/X_keyboard_extension#Using_keymap
+
+### Install
 
 ```bash
 make install-user
 ```
 
-### Configure ###
+### Configure
 
-```bash
-xkbcomp dvp-custom
+Add the following section in your Sway configuration file (`~/.config/sway/config`) 
+
+```
+input type:keyboard {
+    xkb_layout dvp-custom
+}
 ```
 
-## Configuration:
+This sets the layout for all keyboards. If you want to target a specific keyboard, get its indentifier, by running
 
-The easiest way to configure your layout is by using `localectl`
+```bash
+swaymsg -t get_inputs
+```
 
-### kbd
+and replace `type:keyboard` with the keyboard's identifier
 
-    sudo localectl --no-convert set-keymap classic-dvorak
+## Frequently Asked Questions ##
 
-After a restart this will take effect.
-
-### xkbd
-
-    sudo localectl --no-convert set-x11-keymap custom "" dvorak-classic-custom ctrl:swapcaps
-
-1.  Notes
-
-    -   `--no-convert` stops localectl from converting the keymap between the console and X11
-    -   the "" is where your keyboard layout would go, but I don't manually want to configure that, so I leave it blank.
-    -   `dvorak-classic-custom` is my default layout in this keymap
-    -   I swap ctrl and capslock using `ctrl:swapcaps`
-
-### Switching between profiles in X11
-
-To switch between normal qwerty and my layout you must add the `us` keymap in `localectl`:
-
-    localectl --no-convert set-x11-keymap custom,us "" dvorak-classic-custom ctrl:swapcaps
-
-To switch to layout `custom( dvorak-classic-custom)` use:
-
-    setxkbmap -layout custom\(dvorak-classic-custom\)
-
-To switch to `us(intl)`:
-
-    setxkbmap -layout us\(intl\)
-
-
-
-## Further Reading  ##
-
-### What are the differences between classic Dvorak and simplified Dvorak? ###
+### What are the differences between classic Dvorak and simplified Dvorak?
 
 The differences between simplified Dvorak and classic Dvorak are limited to the numeric row and the first alphabetic row as described in the first paragraph of this article:
 
 <http://lists.x.org/archives/xorg/2006-July/016530.html>
 
-Classic Dvorak Layout
+## What is included in the Custom Layouts?
 
-## What is dvorak-classic-custom?
+This custom layouts defines my personal shortcuts.
+When holding down Alt GR, you get arrow keys in an inverted-T on your right hand.
 
-This custom keymap defines my personal shortcuts. It boils down to this:
-When holding down Right Alt, you get arrow keys in an inverted-T on your right hand.
+| -------- | ------- | -------- | --------- |
+| (g) home | (c) ↑   | (r) pgup |           |
+| (h) ←    | (t) ↓   | (n) →    | (s) bcksp |
+| (m) end  | (w)     | (v) pgdn |           |
 
-The following keys:
+### Switching between profiles in XServer
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|g  |c  |r  |	|   |  	
-|h  |t  |n  |s  |\  |
-|m  |   |v  |   |   |	
+To switch between normal qwerty and my layout you must add the `us` keymap in `localectl`:
 
-maps to:
+```
+localectl --no-convert set-x11-keymap custom,us "" dvorak-classic-custom ctrl:swapcaps
+```
 
-|     |   |     |      |       |
-|-----|---|-----|------|-------|
-|home |↑  |pgup | 	   |       |	
-|←   |↓  | →   |bcksp |return |
-|end  |   |pgdn |	   |       |	
+To switch to layout `custom( dvorak-classic-custom)` use:
 
+```
+setxkbmap -layout custom\(dvorak-classic-custom\)
+```
 
+To switch to `us(intl)`:
+
+```
+setxkbmap -layout us\(intl\)
+```
 
