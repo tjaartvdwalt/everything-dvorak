@@ -22,7 +22,7 @@ This package provides several keymapping files related to the Dvorak keyboard la
 
 ## System Install
 
-This option will install kbd layout into `/usr/share/kbd/keymaps/i386/dvorak/classic-dvorak.map.gz` the xkb layouts into `/usr/share/X11/xkb/symbols/custom`
+This option will install `kbd` layout into `/usr/share/kbd/keymaps/i386/dvorak/classic-dvorak.map.gz` and the `xkb` layouts into `/usr/share/X11/xkb/symbols/custom`
 
 ### Install
 
@@ -48,19 +48,19 @@ localectl --no-convert set-x11-keymap custom "" LAYOUT_NAME ctrl:swapcaps
 
 where `LAYOUT_NAME` can be one of
 
--   dvorak-classic-intl
--   dvorak-classic-intl-custom
--   dvp-custom
+-   `dvorak-classic-intl`
+-   `dvorak-classic-intl-custom`
+-   `dvp-custom`
 
 _Notes:_
 
 -   `--no-convert` prevents localectl from converting the keymap between the console and X11
--   the "" is where your keyboard layout would go, but we don't want to configure that manually, so we leave it blank.
+-   the `""` is where your keyboard layout would go, but we don't want to configure that manually, so we leave it blank.
 -   `ctrl:swapcaps` swaps ctrl and capslock keys
 
 ## User Installation
 
-I use this method for [Sway](https://swaywm.org/), if you are using Xserver, you may have luck trying this method from the Arch Wiki.
+This method explains how to configure the layout for [Sway](https://swaywm.org/). Xserver does not load user defined layouts by default, however, you may have luck trying this method described in the Arch Wiki.
 https://wiki.archlinux.org/index.php/X_keyboard_extension#Using_keymap
 
 ### Install
@@ -95,17 +95,18 @@ The differences between simplified Dvorak and classic Dvorak are limited to the 
 
 <http://lists.x.org/archives/xorg/2006-July/016530.html>
 
-## What is included in the Custom Layouts?
+### What is included in the Custom Layouts? ###
 
 This custom layouts defines my personal shortcuts.
 When holding down Alt GR, you get arrow keys in an inverted-T on your right hand.
 
+|          |         |          |           |
 | -------- | ------- | -------- | --------- |
 | (g) home | (c) ↑   | (r) pgup |           |
 | (h) ←    | (t) ↓   | (n) →    | (s) bcksp |
 | (m) end  | (w)     | (v) pgdn |           |
 
-### Switching between profiles in XServer
+### How do I switch between profiles ###
 
 To switch between normal qwerty and my layout you must add the `us` keymap in `localectl`:
 

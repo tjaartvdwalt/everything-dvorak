@@ -2,19 +2,19 @@ keymaps 0-2,4-6,8-9,12
   alt_is_meta
 include "dvorak.map"
 
-keycode  2 = bracketleft      braceleft       
-	control keycode  2 = Escape          
+keycode  2 = bracketleft      braceleft
+	control keycode  2 = Escape
 keycode   3 = seven            ampersand        braceleft       Control_underscore
-keycode   4 = five             percent         
+keycode   4 = five             percent
 	control keycode   4 = Control_bracketright
-keycode   5 = three            numbersign      
-	control keycode   5 = Escape          
-keycode   6 = one              exclam          
-keycode   7 = nine             parenleft        bracketright    
-keycode   8 = zero             parenright       braceright      
+keycode   5 = three            numbersign
+	control keycode   5 = Escape
+keycode   6 = one              exclam
+keycode   7 = nine             parenleft        bracketright
+keycode   8 = zero             parenright       braceright
 keycode   9 = two              at               at              nul			nul
 keycode  10 = four             dollar           dollar          Control_backslash
-keycode  11 = six              asciicircum     
+keycode  11 = six              asciicircum
 	control keycode   11 = Control_asciicircum
 keycode  12 = eight            asterisk         bracketleft     Delete
 keycode  13 = bracketright     braceright       asciitilde      Control_bracketright
